@@ -1,0 +1,92 @@
+10
+
+dir
+42
+https://Caspar@ec2-54-169-253-212.ap-southeast-1.compute.amazonaws.com/svn/Property/code/trunk/property/src/main/webapp/bpm/editor-app/stencilsets/bpmn2.0/icons
+https://Caspar@ec2-54-169-253-212.ap-southeast-1.compute.amazonaws.com/svn/Property
+
+
+
+2016-10-31T02:13:50.097269Z
+39
+Caspar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a147d65e-d848-e247-84d4-63ab22a6516d
+
+startevent
+dir
+
+swimlane
+dir
+
+catching
+dir
+
+dataobject
+dir
+
+gateway
+dir
+
+throwing
+dir
+
+diagram.png
+file
+
+
+
+
+2016-10-26T02:39:08.000000Z
+a45eb3b001a734be2e95a0f1bb0a6f83
+2016-10-31T02:13:50.097269Z
+39
+Caspar
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+206
+
+endevent
+dir
+
+connector
+dir
+
+activity
+dir
+
+artifact
+dir
+

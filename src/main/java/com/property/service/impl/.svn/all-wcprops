@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/Property/!svn/ver/40/code/trunk/property/src/main/java/com/property/service/impl
+END
+ActivitiServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/Property/!svn/ver/40/code/trunk/property/src/main/java/com/property/service/impl/ActivitiServiceImpl.java
+END
+FlowConfigServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/Property/!svn/ver/40/code/trunk/property/src/main/java/com/property/service/impl/FlowConfigServiceImpl.java
+END
+FormDynServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/java/com/property/service/impl/FormDynServiceImpl.java
+END
+BuserServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/Property/!svn/ver/40/code/trunk/property/src/main/java/com/property/service/impl/BuserServiceImpl.java
+END
+FormServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/java/com/property/service/impl/FormServiceImpl.java
+END
+FormValuesServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/Property/!svn/ver/40/code/trunk/property/src/main/java/com/property/service/impl/FormValuesServiceImpl.java
+END
+OrganizationServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/java/com/property/service/impl/OrganizationServiceImpl.java
+END

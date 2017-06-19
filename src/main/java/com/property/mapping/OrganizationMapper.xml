@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.property.dao.OrganizationMapper" >
+  <resultMap id="BaseResultMap" type="com.property.model.Organization" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="PID" property="pid" jdbcType="VARCHAR" />
+    <result column="Name" property="name" jdbcType="VARCHAR" />
+    <result column="Code" property="code" jdbcType="VARCHAR" />
+    <result column="Ecode" property="ecode" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="DECIMAL" />
+    <result column="type" property="type" jdbcType="DECIMAL" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="provinceId" property="provinceid" jdbcType="VARCHAR" />
+    <result column="CityId" property="cityid" jdbcType="VARCHAR" />
+    <result column="AreaId" property="areaid" jdbcType="VARCHAR" />
+    <result column="CommunityId" property="communityid" jdbcType="VARCHAR" />
+    <result column="Address" property="address" jdbcType="VARCHAR" />
+    <result column="level" property="level" jdbcType="DECIMAL" />
+    <result column="path" property="path" jdbcType="VARCHAR" />
+    <result column="Isdelete" property="isdelete" jdbcType="DECIMAL" />
+    <result column="createUser" property="createuser" jdbcType="VARCHAR" />
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="updateUser" property="updateuser" jdbcType="VARCHAR" />
+    <result column="updateTime" property="updatetime" jdbcType="TIMESTAMP" />
+  </resultMap>
+   <resultMap id="NodeMap" type="com.property.data.NodeTree" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="Name" property="text" jdbcType="VARCHAR" />
+    <result column="level" property="level" jdbcType="DECIMAL" />
+  </resultMap>
+  <resultMap id="NodesMap" type="com.property.data.Node" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="Name" property="text" jdbcType="VARCHAR" />
+    <result column="level" property="level" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, PID, Name, Code, Ecode, status, type, phone, provinceId, CityId, AreaId, CommunityId, 
+    Address, level, path, Isdelete, createUser, createTime, updateUser, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_organization
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectNodeByLevel" resultMap="NodeMap">
+    select 
+	ID,Name,level
+    from t_organization
+    where level = #{level,jdbcType=DECIMAL}
+  </select>
+   <select id="selectChildNode" resultMap="NodeMap">
+    select 
+	ID,Name,level
+    from t_organization
+    where PID = #{parentId,jdbcType=VARCHAR}
+    and level = #{level,jdbcType=DECIMAL}
+  </select>
+  <select id="selectNodesByLevel" resultMap="NodesMap">
+    select 
+	ID,Name,level
+    from t_organization
+    where level = #{level,jdbcType=DECIMAL}
+  </select>
+   <select id="selectChildNodes" resultMap="NodesMap">
+    select 
+	ID,Name,level
+    from t_organization
+    where PID = #{parentId,jdbcType=VARCHAR}
+    and level = #{level,jdbcType=DECIMAL}
+  </select>
+  <select id="selectChildrenOrgByPId" resultMap="NodesMap">
+    select 
+	ID,Name,level
+    from t_organization
+    where PID = #{parentId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_organization
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.property.model.Organization" >
+    insert into t_organization (ID, PID, Name, 
+      Code, Ecode, status, 
+      type, phone, provinceId, 
+      CityId, AreaId, CommunityId, 
+      Address, level, path, 
+      Isdelete, createUser, createTime, 
+      updateUser, updateTime)
+    values (#{id,jdbcType=VARCHAR}, #{pid,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{code,jdbcType=VARCHAR}, #{ecode,jdbcType=VARCHAR}, #{status,jdbcType=DECIMAL}, 
+      #{type,jdbcType=DECIMAL}, #{phone,jdbcType=VARCHAR}, #{provinceid,jdbcType=VARCHAR}, 
+      #{cityid,jdbcType=VARCHAR}, #{areaid,jdbcType=VARCHAR}, #{communityid,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{level,jdbcType=DECIMAL}, #{path,jdbcType=VARCHAR}, 
+      #{isdelete,jdbcType=DECIMAL}, #{createuser,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{updateuser,jdbcType=VARCHAR}, #{updatetime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.property.model.Organization" >
+  	<selectKey keyProperty="id" resultType="String" order="BEFORE">  
+        select  uuid() from dual  
+    </selectKey>  
+    insert into t_organization
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      	ID,
+      <if test="pid != null" >
+        PID,
+      </if>
+      <if test="name != null" >
+        Name,
+      </if>
+      <if test="code != null" >
+        Code,
+      </if>
+      <if test="ecode != null" >
+        Ecode,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="provinceid != null" >
+        provinceId,
+      </if>
+      <if test="cityid != null" >
+        CityId,
+      </if>
+      <if test="areaid != null" >
+        AreaId,
+      </if>
+      <if test="communityid != null" >
+        CommunityId,
+      </if>
+      <if test="address != null" >
+        Address,
+      </if>
+      <if test="level != null" >
+        level,
+      </if>
+      <if test="path != null" >
+        path,
+      </if>
+      <if test="isdelete != null" >
+        Isdelete,
+      </if>
+      <if test="createuser != null" >
+        createUser,
+      </if>
+      <if test="createtime != null" >
+        createTime,
+      </if>
+      <if test="updateuser != null" >
+        updateUser,
+      </if>
+      <if test="updatetime != null" >
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+        #{id,jdbcType=VARCHAR},
+      <if test="pid != null" >
+        #{pid,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="ecode != null" >
+        #{ecode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=DECIMAL},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceid != null" >
+        #{provinceid,jdbcType=VARCHAR},
+      </if>
+      <if test="cityid != null" >
+        #{cityid,jdbcType=VARCHAR},
+      </if>
+      <if test="areaid != null" >
+        #{areaid,jdbcType=VARCHAR},
+      </if>
+      <if test="communityid != null" >
+        #{communityid,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null" >
+        #{level,jdbcType=DECIMAL},
+      </if>
+      <if test="path != null" >
+        #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="isdelete != null" >
+        #{isdelete,jdbcType=DECIMAL},
+      </if>
+      <if test="createuser != null" >
+        #{createuser,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateuser != null" >
+        #{updateuser,jdbcType=VARCHAR},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.property.model.Organization" >
+    update t_organization
+    <set >
+      <if test="pid != null" >
+        PID = #{pid,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        Name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        Code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="ecode != null" >
+        Ecode = #{ecode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=DECIMAL},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceid != null" >
+        provinceId = #{provinceid,jdbcType=VARCHAR},
+      </if>
+      <if test="cityid != null" >
+        CityId = #{cityid,jdbcType=VARCHAR},
+      </if>
+      <if test="areaid != null" >
+        AreaId = #{areaid,jdbcType=VARCHAR},
+      </if>
+      <if test="communityid != null" >
+        CommunityId = #{communityid,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        Address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null" >
+        level = #{level,jdbcType=DECIMAL},
+      </if>
+      <if test="path != null" >
+        path = #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="isdelete != null" >
+        Isdelete = #{isdelete,jdbcType=DECIMAL},
+      </if>
+      <if test="createuser != null" >
+        createUser = #{createuser,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateuser != null" >
+        updateUser = #{updateuser,jdbcType=VARCHAR},
+      </if>
+      <if test="updatetime != null" >
+        updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.property.model.Organization" >
+    update t_organization
+    set PID = #{pid,jdbcType=VARCHAR},
+      Name = #{name,jdbcType=VARCHAR},
+      Code = #{code,jdbcType=VARCHAR},
+      Ecode = #{ecode,jdbcType=VARCHAR},
+      status = #{status,jdbcType=DECIMAL},
+      type = #{type,jdbcType=DECIMAL},
+      phone = #{phone,jdbcType=VARCHAR},
+      provinceId = #{provinceid,jdbcType=VARCHAR},
+      CityId = #{cityid,jdbcType=VARCHAR},
+      AreaId = #{areaid,jdbcType=VARCHAR},
+      CommunityId = #{communityid,jdbcType=VARCHAR},
+      Address = #{address,jdbcType=VARCHAR},
+      level = #{level,jdbcType=DECIMAL},
+      path = #{path,jdbcType=VARCHAR},
+      Isdelete = #{isdelete,jdbcType=DECIMAL},
+      createUser = #{createuser,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      updateUser = #{updateuser,jdbcType=VARCHAR},
+      updateTime = #{updatetime,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

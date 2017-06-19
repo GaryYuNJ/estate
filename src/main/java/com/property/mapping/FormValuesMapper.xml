@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.property.dao.FormValuesMapper">
+	<resultMap id="BaseResultMap" type="com.property.model.FormValues">
+		<id column="id" property="id" jdbcType="VARCHAR" />
+		<result column="formdefine_id" property="formdefine_id"
+			jdbcType="INTEGER" />
+		<result column="tablename_en" property="tablename_en" jdbcType="VARCHAR" />
+		<result column="values" property="values" jdbcType="VARCHAR" typeHandler="com.property.utils.ConvertBlobTypeHandler" />
+		<result column="createuser" property="createuser" jdbcType="VARCHAR" />
+		<result column="updateuser" property="updateuser" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="INTEGER" />
+		<result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+		<result column="updatetime" property="updatetime" jdbcType="TIMESTAMP" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		`id`,`formdefine_id`,`tablename_en`,`values`,`createuser`,`updateuser`,`status`,`createtime`,`updatetime`
+	</sql>
+	<select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from form_values
+		where `id` =
+		#{id,jdbcType=VARCHAR} and `status`=1
+	</select>
+
+	<select id="selectByFormDefineID" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from form_values
+		where `formdefine_id` =
+		#{formdefine_id,jdbcType=VARCHAR} and `status`=1
+	</select>
+
+	<insert id="insert" parameterType="com.property.model.FormValues">
+		insert into form_values
+		(`id`,`formdefine_id`,`tablename_en`,`values`,`createuser`,`status`,`createtime`) 
+		values
+		(#{id,jdbcType=VARCHAR},
+		#{formdefine_id,jdbcType=INTEGER},
+		#{tablename_en,jdbcType=VARCHAR},
+		#{values,jdbcType=VARCHAR},
+		#{createuser,jdbcType=VARCHAR},
+		#{status,jdbcType=INTEGER},
+		#{createtime,jdbcType=TIMESTAMP})
+	</insert>
+
+	<update id="updateByPrimaryKey" parameterType="com.property.model.FormValues">
+		update form_values
+		set `values` = #{values,jdbcType=VARCHAR},
+		`updateuser` =
+		#{updateuser,jdbcType=VARCHAR},
+		`status` = #{status,jdbcType=INTEGER},
+		`updatetime` = #{updatetime,jdbcType=TIMESTAMP}
+		where `id` =
+		#{id,jdbcType=VARCHAR}
+	</update>
+</mapper>

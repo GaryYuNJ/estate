@@ -1,0 +1,93 @@
+<!-- 审批列表页面，设置流程按钮弹窗，选择使用何种方式设置流程 -->
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"
+				aria-hidden="true">×</button>
+			<h4 class="modal-title">设置流程</h4>
+		</div>
+		<div class="modal-body">
+			<div class="btn-group">
+				<button class="btn btn-default dropdown-toggle"
+					data-toggle="dropdown">
+					复杂流程设置 <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a href="javascript:0;" onclick="bpmNew({{index}})">使用流程设计器配置流程</a></li>
+					<li><a href="javascript:0;" onclick="reDeployModelComplex({{id}})">部署流程</a></li>
+					<li class="divider"></li>
+					<li><a href="javascript:0;" onclick="usertaskSet({{id}})">配置用户流程节点</a></li>
+				</ul>
+			</div>
+			<div style="margin-top: 13px;" class="alert alert-info">使用流程设计器配置流程，已有流程通过“配置用户流程节点”修改用户人物相关配置</div>
+			<hr style="border-bottom: 1px solid #928F8F;">
+			<a href="assignset?id={{id}}" class="btn notify btn-default btn-sm"
+				style="margin-top: 13px;">简单流程设置</a>
+			<div style="margin-top: 13px;" class="alert alert-info">简单流程设置，列表形式显示</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal"
+				aria-hidden="true">取消</button>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+var bpmNew=function(index){
+	var obj=vue.list[index];
+	$.ajax({
+		type: 'POST',
+  		dataType: 'Json',
+  		url: rootUri + '/bpm/addModel' ,
+  		data:{
+			id:obj.id,
+  			name:obj.tableName,
+  			key:obj.tableNameEn,
+  			description:obj.description
+  		},
+  		success: function(data){
+  			console.log(data);
+  			window.open(rootUri+data.url);
+  		},
+  		error:function(err){
+  			console.log(err);
+  		}				
+	});
+};
+
+var usertaskSet=function(id){
+	$.ajax({
+		type: 'Get',
+  		dataType: 'Json',
+  		url: rootUri + '/FormFlowBase/getProcessDefineID/'+id ,
+  		success: function(data){
+  			console.log(data);
+  			if(data.status==0){
+  				alert(data.message);
+  				return;
+  			}
+  			if(data.status==1){
+  	  			window.open(rootUri+'/fwpages/usertaskset/'+data.content);
+  			}
+  		},
+  		error:function(err){
+  			console.log(err);
+  		}				
+	});
+};
+
+var reDeployModelComplex=function(id){
+	$.ajax({
+		type: 'Get',
+  		dataType: 'Json',
+  		url: rootUri + '/Flow/deployModel/'+id+'/complex',
+  		success: function(data){	
+  			alert("部署成功");
+  		},
+  		error:function(err){
+  			alert("部署失败");
+  			console.log(err);
+  		}				
+	});
+};
+</script>

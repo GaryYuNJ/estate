@@ -1,0 +1,42 @@
+package com.property.service.impl;
+
+import java.util.List;
+import java.util.Map;
+import java.sql.ResultSet;
+
+import javax.annotation.Resource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Service;
+
+import com.property.dao.FormTableDefineMapper;
+import com.property.model.FormTableDefine;
+import com.property.service.IFormDynService;
+import com.property.service.IFormService;
+
+@Service("formDynService")
+public class FormDynServiceImpl implements IFormDynService {
+
+	@Resource
+	private JdbcTemplate jdbcTemplate; 
+	
+	@Override
+	public void creatNewForm(String sql) {
+		// TODO Auto-generated method stub
+		jdbcTemplate.execute(sql);
+	}
+	
+	@Override
+	public List<Map<String, Object>> selectFormValues(String sql){
+		return jdbcTemplate.queryForList(sql);
+	}
+	
+    public JdbcTemplate getJdbcTemplate() {  
+        return jdbcTemplate;  
+    }  
+  
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {  
+        this.jdbcTemplate = jdbcTemplate;  
+    }  
+}

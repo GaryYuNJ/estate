@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.property.dao.FormTableDefineMapper" >
+  <resultMap id="BaseResultMap" type="com.property.model.FormTableDefine" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="tableName" property="tableName" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="tableNameEn" property="tableNameEn" jdbcType="VARCHAR" />
+    <result column="fieldsJson" property="fieldsJson" jdbcType="VARCHAR" />
+    <result column="activitiJson" property="activitiJson" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="INTEGER" />
+    <result column="cratetime" property="cratetime" jdbcType="TIMESTAMP" />
+    <result column="updatetime" property="updatetime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id,tableName,description,tableNameEn,fieldsJson,activitiJson,state,cratetime,updatetime
+  </sql>
+  <select id="selectByName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from form_define
+    where tableNameEn = #{tableNameEn,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from form_define
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="getFormList" resultMap="BaseResultMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from form_define
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from form_define
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.property.model.FormTableDefine" >
+    insert into form_define (tableName,description,tableNameEn,fieldsJson,state,cratetime,updatetime)
+    values (#{tableName,jdbcType=VARCHAR},#{description,jdbcType=VARCHAR},#{tableNameEn,jdbcType=VARCHAR}, #{fieldsJson,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER}, #{cratetime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.property.model.FormTableDefine" >
+    insert into form_define
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="tableName != null" >
+        tableName,
+      </if>
+      <if test="fieldsJson != null" >
+        fieldsJson,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="tableName != null" >
+        #{tableName,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldsJson != null" >
+        #{fieldsJson,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.property.model.FormTableDefine" >
+    update form_define
+    <set >
+      <if test="tableName != null" >
+        tableName = #{tableName,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldsJson != null" >
+        fieldsJson = #{fieldsJson,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.property.model.FormTableDefine" >
+    update form_define
+    set tableName = #{tableName,jdbcType=VARCHAR},
+      tableNameEn = #{tableNameEn,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      fieldsJson = #{fieldsJson,jdbcType=VARCHAR},
+      activitiJson = #{activitiJson,jdbcType=INTEGER},
+      state = #{state,jdbcType=VARCHAR},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

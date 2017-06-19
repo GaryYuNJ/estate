@@ -1,0 +1,42 @@
+<!-- 审批节点设置弹出层 -->
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"
+				aria-hidden="true">×</button>
+			<h4 class="modal-title">设置审批属性</h4>
+		</div>
+		<div class="modal-body">
+			<!-- <div v-if="item.field_type=='checkboxes'">
+								<label class="control-label col-lg-3" for="address">{{item.label}}</label>
+								<div class="col-lg-6">
+									<div class="check-box"
+										v-for="checkboxItem in item.field_options.options">
+										<label class="fb-option"> <input
+											v-if="checkboxItem.checked" v-model="checkboxItem.checked"
+											type="checkbox" checked="checked"> <input
+											v-else="checkboxItem.checked" v-model="checkboxItem.checked"
+											type="checkbox"> {{checkboxItem.label}}
+										</label>
+									</div>
+								</div>
+							</div> -->
+			<div style="margin-bottom: 57px;">
+				<div v-for="item in params">
+					<label class="col-lg-4 control-label">{{item.expression}}</label>
+					<div class="col-lg-8" style="margin-bottom: 10px;">
+						<input type="text" class="form-control" v-model="item.value">
+					</div>
+				</div>
+			</div>
+			<hr
+				style="border-bottom: 1px solid #928F8F; padding-left: 30px; padding-top: 17px;">
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal"
+				aria-hidden="true">取消</button>
+			<button type="button" onclick="addAssign2()" class="btn btn-primary">确定</button>
+		</div>
+	</div>
+</div>
+

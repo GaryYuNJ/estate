@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/stencilsets/bpmn2.0/icons/gateway
+END
+parallel.png
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/stencilsets/bpmn2.0/icons/gateway/parallel.png
+END
+exclusive.databased.png
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/stencilsets/bpmn2.0/icons/gateway/exclusive.databased.png
+END
+eventbased.png
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/stencilsets/bpmn2.0/icons/gateway/eventbased.png
+END
+inclusive.png
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/stencilsets/bpmn2.0/icons/gateway/inclusive.png
+END

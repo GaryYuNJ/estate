@@ -1,0 +1,51 @@
+<!-- 审批节点设置弹出层 -->
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"
+				aria-hidden="true">×</button>
+			<h4 class="modal-title">设置审批属性</h4>
+		</div>
+		<div class="modal-body">
+			<div style="margin-bottom: 57px;">
+				<div v-for="item in params">
+					<label class="col-lg-4 control-label">{{item.expression}}</label>
+					<div class="col-lg-8" style="margin-bottom: 10px;">
+						<input type="text" class="form-control" v-model="item.value">
+					</div>
+				</div>
+			</div>
+			<hr
+				style="border-bottom: 1px solid #928F8F; padding-left: 30px; padding-top: 17px;">
+
+			<table class="table table-striped table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>字段</th>
+						<th>类型</th>
+						<th>权限</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="item in formfields">
+						<td>{{item.label}}</td>
+						<td>{{item.field_type}}</td>
+						<td><input value="read" v-model="item.value" type="radio"
+							name={{item.cid}}> 只读 <input value="write"
+							v-model="item.value" type="radio" name={{item.cid}}> 可编辑
+							<input value="disable" v-model="item.value" type="radio"
+							name={{item.cid}}> 不可见 </label></td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- a data-toggle="modal"	
+				data-target="#usertask-set-2" class="btn btn-xs btn-warning"
+				data-index="1"><i class="icon-pencil">设置表单字段</i></a-->
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal"
+				aria-hidden="true">取消</button>
+			<button type="button" onclick="usertaskSet()" class="btn btn-primary">确定</button>
+		</div>
+	</div>
+</div>

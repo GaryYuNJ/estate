@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/stencilsets/bpmn2.0/icons/activity
+END
+event.subprocess.collapsed.png
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/stencilsets/bpmn2.0/icons/activity/event.subprocess.collapsed.png
+END
+expanded.subprocess.png
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/stencilsets/bpmn2.0/icons/activity/expanded.subprocess.png
+END
+task.png
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/stencilsets/bpmn2.0/icons/activity/task.png
+END
+event.subprocess.png
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/stencilsets/bpmn2.0/icons/activity/event.subprocess.png
+END
+subprocess.png
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/stencilsets/bpmn2.0/icons/activity/subprocess.png
+END

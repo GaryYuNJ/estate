@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.property.dao.DistrctMapper" >
+  <resultMap id="BaseResultMap" type="com.property.model.Distrct" >
+    <id column="ID" property="id" jdbcType="CHAR" />
+    <result column="ParID" property="parid" jdbcType="CHAR" />
+    <result column="Name" property="name" jdbcType="VARCHAR" />
+    <result column="Code" property="code" jdbcType="VARCHAR" />
+    <result column="Level" property="level" jdbcType="VARCHAR" />
+    <result column="Created_time" property="createdTime" jdbcType="VARCHAR" />
+    <result column="Created_user" property="createdUser" jdbcType="VARCHAR" />
+    <result column="Updated_time" property="updatedTime" jdbcType="VARCHAR" />
+    <result column="Updated_User" property="updatedUser" jdbcType="VARCHAR" />
+    <result column="GC_Flag" property="gcFlag" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, ParID, Name, Code, Level, Created_time, Created_user, Updated_time, Updated_User, 
+    GC_Flag
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_distrct
+    where ID = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_distrct
+    where ID = #{id,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.property.model.Distrct" >
+    insert into t_distrct (ID, ParID, Name, Code, 
+      Level, Created_time, Created_user, 
+      Updated_time, Updated_User, GC_Flag
+      )
+    values (#{id,jdbcType=CHAR}, #{parid,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, 
+      #{level,jdbcType=VARCHAR}, #{createdTime,jdbcType=VARCHAR}, #{createdUser,jdbcType=VARCHAR}, 
+      #{updatedTime,jdbcType=VARCHAR}, #{updatedUser,jdbcType=VARCHAR}, #{gcFlag,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.property.model.Distrct" >
+    insert into t_distrct
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="parid != null" >
+        ParID,
+      </if>
+      <if test="name != null" >
+        Name,
+      </if>
+      <if test="code != null" >
+        Code,
+      </if>
+      <if test="level != null" >
+        Level,
+      </if>
+      <if test="createdTime != null" >
+        Created_time,
+      </if>
+      <if test="createdUser != null" >
+        Created_user,
+      </if>
+      <if test="updatedTime != null" >
+        Updated_time,
+      </if>
+      <if test="updatedUser != null" >
+        Updated_User,
+      </if>
+      <if test="gcFlag != null" >
+        GC_Flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="parid != null" >
+        #{parid,jdbcType=CHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null" >
+        #{level,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null" >
+        #{createdTime,jdbcType=VARCHAR},
+      </if>
+      <if test="createdUser != null" >
+        #{createdUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updatedTime != null" >
+        #{updatedTime,jdbcType=VARCHAR},
+      </if>
+      <if test="updatedUser != null" >
+        #{updatedUser,jdbcType=VARCHAR},
+      </if>
+      <if test="gcFlag != null" >
+        #{gcFlag,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.property.model.Distrct" >
+    update t_distrct
+    <set >
+      <if test="parid != null" >
+        ParID = #{parid,jdbcType=CHAR},
+      </if>
+      <if test="name != null" >
+        Name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        Code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null" >
+        Level = #{level,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null" >
+        Created_time = #{createdTime,jdbcType=VARCHAR},
+      </if>
+      <if test="createdUser != null" >
+        Created_user = #{createdUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updatedTime != null" >
+        Updated_time = #{updatedTime,jdbcType=VARCHAR},
+      </if>
+      <if test="updatedUser != null" >
+        Updated_User = #{updatedUser,jdbcType=VARCHAR},
+      </if>
+      <if test="gcFlag != null" >
+        GC_Flag = #{gcFlag,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.property.model.Distrct" >
+    update t_distrct
+    set ParID = #{parid,jdbcType=CHAR},
+      Name = #{name,jdbcType=VARCHAR},
+      Code = #{code,jdbcType=VARCHAR},
+      Level = #{level,jdbcType=VARCHAR},
+      Created_time = #{createdTime,jdbcType=VARCHAR},
+      Created_user = #{createdUser,jdbcType=VARCHAR},
+      Updated_time = #{updatedTime,jdbcType=VARCHAR},
+      Updated_User = #{updatedUser,jdbcType=VARCHAR},
+      GC_Flag = #{gcFlag,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

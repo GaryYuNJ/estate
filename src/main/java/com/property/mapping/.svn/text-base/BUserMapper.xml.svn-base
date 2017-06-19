@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.property.dao.BUserMapper">
+	<resultMap id="BaseResultMap" type="com.property.model.BUser">
+		<id column="id" property="id" jdbcType="VARCHAR" />
+		<result column="loginId" property="loginid" jdbcType="VARCHAR" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="password" property="password" jdbcType="VARCHAR" />
+		<result column="sex" property="sex" jdbcType="DECIMAL" />
+		<result column="phone" property="phone" jdbcType="VARCHAR" />
+		<result column="mphone" property="mphone" jdbcType="VARCHAR" />
+		<result column="address" property="address" jdbcType="VARCHAR" />
+		<result column="email" property="email" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="DECIMAL" />
+		<result column="orId" property="orid" jdbcType="VARCHAR" />
+		<result column="type" property="type" jdbcType="DECIMAL" />
+		<result column="isdelete" property="isdelete" jdbcType="DECIMAL" />
+		<result column="createUser" property="createuser" jdbcType="VARCHAR" />
+		<result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+		<result column="updateUser" property="updateuser" jdbcType="VARCHAR" />
+		<result column="updateTime" property="updatetime" jdbcType="TIMESTAMP" />
+	</resultMap>
+	<resultMap id="resultOfInteger" type="java.lang.Integer">
+		<result column="totalCount" property="totalCount" jdbcType="INTEGER" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, loginId, name, password, sex, phone, mphone, address,
+		email, status,
+		orId, type,
+		isdelete, createUser, createTime, updateUser,
+		updateTime
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from t_buser
+		where id = #{id,jdbcType=VARCHAR}
+	</select>
+	<select id="selectByloginPassword" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_buser
+		where loginId = #{loginId,jdbcType=VARCHAR} AND
+		password =
+		#{password,jdbcType=VARCHAR}
+	</select>
+	<select id="selectCountByCondition" resultMap="resultOfInteger"
+		parameterType="com.property.model.BUser">
+		SELECT count(1) AS totalCount
+		FROM t_buser
+		<if test="buser!=null">
+			<where>
+				<if test="buser.loginid != null and buser.loginid !=''">
+					<bind name="loginLike" value="'%' + buser.loginid + '%'" />
+					loginId like #{loginLike}
+				</if>
+				<if test="buser.orid != null and buser.orid !=''"> AND orId = #{buser.orid}</if>
+			</where>
+		</if>
+	</select>
+	<select id="selectBuserListByCondition" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_buser
+		<if test="buser!=null">
+			<where>
+				<if test="buser.loginid != null and buser.loginid !=''">
+					<bind name="loginLike" value="'%' + buser.loginid + '%'" />
+					loginId like #{loginLike}
+				</if>
+				<if test="buser.orid != null  and buser.orid !=''"> AND orId = #{buser.orid}</if>
+			</where>
+		</if>
+		limit #{startRow,jdbcType=INTEGER}, #{pageSize,jdbcType=INTEGER}
+	</select>
+	<select id="selectBuserList" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_buser
+	</select>
+	<select id="selectBuserListByLoginID" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_buser
+		where loginId = #{loginId,jdbcType=VARCHAR}
+	</select>
+	<select id="selectBuserListByOrid" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_buser
+		where orId = #{orId,jdbcType=VARCHAR} and type=1
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from
+		t_buser
+		where id = #{id,jdbcType=VARCHAR}
+	</delete>
+	<insert id="insert" parameterType="com.property.model.BUser">
+		insert into t_buser (id,
+		loginId, name,
+		password, sex, phone,
+		mphone, address, email,
+		status,
+		orId, type,
+		isdelete, createUser, createTime,
+		updateUser, updateTime)
+		values (#{id,jdbcType=VARCHAR}, #{loginid,jdbcType=VARCHAR},
+		#{name,jdbcType=VARCHAR},
+		#{password,jdbcType=VARCHAR},
+		#{sex,jdbcType=DECIMAL}, #{phone,jdbcType=VARCHAR},
+		#{mphone,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR},
+		#{email,jdbcType=VARCHAR},
+		#{status,jdbcType=DECIMAL},
+		#{orid,jdbcType=VARCHAR}, #{type,jdbcType=DECIMAL},
+		#{isdelete,jdbcType=DECIMAL}, #{createuser,jdbcType=VARCHAR},
+		#{createtime,jdbcType=TIMESTAMP},
+		#{updateuser,jdbcType=VARCHAR},
+		#{updatetime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="com.property.model.BUser">
+		<selectKey keyProperty="id" resultType="String" order="BEFORE">
+			select uuid() from dual
+		</selectKey>
+		insert into t_buser
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			id,
+			<if test="loginid != null">
+				loginId,
+			</if>
+			<if test="name != null">
+				name,
+			</if>
+			<if test="password != null">
+				password,
+			</if>
+			<if test="sex != null">
+				sex,
+			</if>
+			<if test="phone != null">
+				phone,
+			</if>
+			<if test="mphone != null">
+				mphone,
+			</if>
+			<if test="address != null">
+				address,
+			</if>
+			<if test="email != null">
+				email,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="orid != null">
+				orId,
+			</if>
+			<if test="type != null">
+				type,
+			</if>
+			<if test="isdelete != null">
+				isdelete,
+			</if>
+			<if test="createuser != null">
+				createUser,
+			</if>
+			<if test="createtime != null">
+				createTime,
+			</if>
+			<if test="updateuser != null">
+				updateUser,
+			</if>
+			<if test="updatetime != null">
+				updateTime,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			#{id,jdbcType=VARCHAR},
+			<if test="loginid != null">
+				#{loginid,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				#{name,jdbcType=VARCHAR},
+			</if>
+			<if test="password != null">
+				#{password,jdbcType=VARCHAR},
+			</if>
+			<if test="sex != null">
+				#{sex,jdbcType=DECIMAL},
+			</if>
+			<if test="phone != null">
+				#{phone,jdbcType=VARCHAR},
+			</if>
+			<if test="mphone != null">
+				#{mphone,jdbcType=VARCHAR},
+			</if>
+			<if test="address != null">
+				#{address,jdbcType=VARCHAR},
+			</if>
+			<if test="email != null">
+				#{email,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=DECIMAL},
+			</if>
+			<if test="orid != null">
+				#{orid,jdbcType=VARCHAR},
+			</if>
+			<if test="type != null">
+				#{type,jdbcType=DECIMAL},
+			</if>
+			<if test="isdelete != null">
+				#{isdelete,jdbcType=DECIMAL},
+			</if>
+			<if test="createuser != null">
+				#{createuser,jdbcType=VARCHAR},
+			</if>
+			<if test="createtime != null">
+				#{createtime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateuser != null">
+				#{updateuser,jdbcType=VARCHAR},
+			</if>
+			<if test="updatetime != null">
+				#{updatetime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.property.model.BUser">
+		update t_buser
+		<set>
+			<if test="loginid != null">
+				loginId = #{loginid,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="password != null">
+				password = #{password,jdbcType=VARCHAR},
+			</if>
+			<if test="sex != null">
+				sex = #{sex,jdbcType=DECIMAL},
+			</if>
+			<if test="phone != null">
+				phone = #{phone,jdbcType=VARCHAR},
+			</if>
+			<if test="mphone != null">
+				mphone = #{mphone,jdbcType=VARCHAR},
+			</if>
+			<if test="address != null">
+				address = #{address,jdbcType=VARCHAR},
+			</if>
+			<if test="email != null">
+				email = #{email,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				status = #{status,jdbcType=DECIMAL},
+			</if>
+			<if test="orid != null">
+				orId = #{orid,jdbcType=VARCHAR},
+			</if>
+			<if test="type != null">
+				type = #{type,jdbcType=DECIMAL},
+			</if>
+			<if test="isdelete != null">
+				isdelete = #{isdelete,jdbcType=DECIMAL},
+			</if>
+			<if test="createuser != null">
+				createUser = #{createuser,jdbcType=VARCHAR},
+			</if>
+			<if test="createtime != null">
+				createTime = #{createtime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateuser != null">
+				updateUser = #{updateuser,jdbcType=VARCHAR},
+			</if>
+			<if test="updatetime != null">
+				updateTime = #{updatetime,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where id = #{id,jdbcType=VARCHAR}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.property.model.BUser">
+		update t_buser
+		set
+		loginId = #{loginid,jdbcType=VARCHAR},
+		name = #{name,jdbcType=VARCHAR},
+		password = #{password,jdbcType=VARCHAR},
+		sex = #{sex,jdbcType=DECIMAL},
+		phone = #{phone,jdbcType=VARCHAR},
+		mphone = #{mphone,jdbcType=VARCHAR},
+		address = #{address,jdbcType=VARCHAR},
+		email =
+		#{email,jdbcType=VARCHAR},
+		status = #{status,jdbcType=DECIMAL},
+		orId =
+		#{orid,jdbcType=VARCHAR},
+		type = #{type,jdbcType=DECIMAL},
+		isdelete =
+		#{isdelete,jdbcType=DECIMAL},
+		createUser =
+		#{createuser,jdbcType=VARCHAR},
+		createTime =
+		#{createtime,jdbcType=TIMESTAMP},
+		updateUser =
+		#{updateuser,jdbcType=VARCHAR},
+		updateTime =
+		#{updatetime,jdbcType=TIMESTAMP}
+		where id = #{id,jdbcType=VARCHAR}
+	</update>
+</mapper>

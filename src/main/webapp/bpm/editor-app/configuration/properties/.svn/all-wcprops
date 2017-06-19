@@ -1,0 +1,293 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties
+END
+out-parameters-display-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/out-parameters-display-template.html
+END
+assignment-display-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/assignment-display-template.html
+END
+condition-expression-popup.html
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/condition-expression-popup.html
+END
+sequenceflow-order-display-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/sequenceflow-order-display-template.html
+END
+text-popup.html
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/text-popup.html
+END
+signal-definitions-popup.html
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/signal-definitions-popup.html
+END
+signal-definitions-write-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/signal-definitions-write-template.html
+END
+event-listeners-popup.html
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/event-listeners-popup.html
+END
+message-definitions-popup.html
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/message-definitions-popup.html
+END
+form-properties-write-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/form-properties-write-template.html
+END
+signal-property-write-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/signal-property-write-template.html
+END
+multiinstance-property-write-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/multiinstance-property-write-template.html
+END
+signal-definitions-display-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/signal-definitions-display-template.html
+END
+message-property-write-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/message-property-write-template.html
+END
+fields-write-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/fields-write-template.html
+END
+fields-popup.html
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/fields-popup.html
+END
+text-property-write-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/text-property-write-template.html
+END
+in-parameters-write-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/in-parameters-write-template.html
+END
+form-properties-display-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/form-properties-display-template.html
+END
+task-listeners-popup.html
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/task-listeners-popup.html
+END
+task-listeners-write-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/task-listeners-write-template.html
+END
+boolean-property-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/boolean-property-template.html
+END
+default-value-display-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/default-value-display-template.html
+END
+execution-listeners-write-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/execution-listeners-write-template.html
+END
+sequenceflow-order-popup.html
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/sequenceflow-order-popup.html
+END
+string-property-write-mode-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/string-property-write-mode-template.html
+END
+fields-display-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/fields-display-template.html
+END
+in-parameters-display-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/in-parameters-display-template.html
+END
+condition-expression-write-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/condition-expression-write-template.html
+END
+task-listeners-display-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/task-listeners-display-template.html
+END
+execution-listeners-display-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/execution-listeners-display-template.html
+END
+feedback-popup.html
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/feedback-popup.html
+END
+subprocess-reference-popup.html
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/subprocess-reference-popup.html
+END
+subprocess-reference-write-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/subprocess-reference-write-template.html
+END
+event-listeners-write-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/event-listeners-write-template.html
+END
+message-definitions-write-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/message-definitions-write-template.html
+END
+form-properties-popup.html
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/form-properties-popup.html
+END
+condition-expression-display-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/condition-expression-display-template.html
+END
+subprocess-reference-display-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/subprocess-reference-display-template.html
+END
+event-listeners-display-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/event-listeners-display-template.html
+END
+in-parameters-popup.html
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/in-parameters-popup.html
+END
+out-parameters-popup.html
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/out-parameters-popup.html
+END
+message-definitions-display-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/message-definitions-display-template.html
+END
+assignment-popup.html
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/assignment-popup.html
+END
+assignment-write-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/assignment-write-template.html
+END
+out-parameters-write-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/out-parameters-write-template.html
+END
+execution-listeners-popup.html
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/execution-listeners-popup.html
+END
+sequenceflow-order-write-template.html
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/configuration/properties/sequenceflow-order-write-template.html
+END

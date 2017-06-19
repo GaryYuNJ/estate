@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.property.dao.FlowConfigMapper">
+	<resultMap id="BaseResultMap" type="com.property.model.FlowConfig">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="processdefine_id" property="processdefine_id"
+			jdbcType="VARCHAR" />
+		<result column="config_type" property="config_type" jdbcType="VARCHAR" />
+		<result column="content" property="content" jdbcType="VARCHAR" typeHandler="com.property.utils.ConvertBlobTypeHandler" />
+		<result column="createuser" property="createuser" jdbcType="VARCHAR" />
+		<result column="updateuser" property="updateuser" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="INTEGER" />
+		<result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+		<result column="updatetime" property="updatetime" jdbcType="TIMESTAMP" />
+		<result column="processdefine_key" property="processdefine_key"
+			jdbcType="VARCHAR" />
+		<result column="processdefine_version" property="processdefine_version"
+			jdbcType="INTEGER" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id,processdefine_id,config_type,content,createuser,updateuser,status,createtime,updatetime,processdefine_key,processdefine_version
+	</sql>
+	<select id="selectByKey" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from flow_config
+		where processdefine_key =
+		#{processdefine_key,jdbcType=VARCHAR} and status=1
+	</select>
+
+	<select id="selectByPRID" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from flow_config
+		where processdefine_id =
+		#{processdefine_id,jdbcType=VARCHAR} and status=1
+	</select>
+
+	<insert id="insert" parameterType="com.property.model.FlowConfig">
+		insert into flow_config
+		(processdefine_id,config_type,content,createuser,updateuser,status,createtime,updatetime,processdefine_key,processdefine_version)
+		values
+		(#{processdefine_id,jdbcType=VARCHAR},#{config_type,jdbcType=VARCHAR},#{content,jdbcType=VARCHAR},
+		#{createuser,jdbcType=VARCHAR}, #{updateuser,jdbcType=VARCHAR},
+		#{status,jdbcType=INTEGER},
+		#{createtime,jdbcType=TIMESTAMP},
+		#{updatetime,jdbcType=TIMESTAMP},
+		#{processdefine_key,jdbcType=VARCHAR},
+		#{processdefine_version,jdbcType=INTEGER})
+	</insert>
+
+	<update id="updateByPrimaryKey" parameterType="com.property.model.FlowConfig">
+		update flow_config
+		set content = #{content,jdbcType=VARCHAR},
+		updateuser =
+		#{updateuser,jdbcType=VARCHAR},
+		status = #{status,jdbcType=INTEGER},
+		updatetime = #{updatetime,jdbcType=TIMESTAMP}
+		where id =
+		#{id,jdbcType=INTEGER}
+	</update>
+</mapper>

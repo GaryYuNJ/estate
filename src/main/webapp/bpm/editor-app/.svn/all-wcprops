@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app
+END
+editor-utils.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/editor-utils.js
+END
+plugins.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/plugins.xml
+END
+editor-controller.js
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/editor-controller.js
+END
+editor-config.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/editor-config.js
+END
+header-controller.js
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/header-controller.js
+END
+eventbus.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/eventbus.js
+END
+app-cfg.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/app-cfg.js
+END
+editor.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/editor.html
+END
+select-shape-controller.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/select-shape-controller.js
+END
+app.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/app.js
+END
+stencil-controller.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/stencil-controller.js
+END
+toolbar-controller.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/Property/!svn/ver/39/code/trunk/property/src/main/webapp/bpm/editor-app/toolbar-controller.js
+END
